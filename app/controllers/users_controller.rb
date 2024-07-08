@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
+    
+    include Filterable
 
     def index
         @users = User.paginate(page: params[:page], per_page: 5)
+    end
+
+    def filter
+    
     end
 
     def new
