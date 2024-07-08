@@ -1,0 +1,28 @@
+
+<br/>
+ 
+<%= link_to "Take Me Back To The Homepage", root_path, class: "btn btn-success" %>
+<br/>
+<br/>
+
+<% @filtered_users.each do |key,values| %>
+<h3 class="text-primary">Table for <%= key %></h3>
+<br/>
+<table class = "table table-light table-hover table-bordered table-striped">
+  <thead>
+    <tr>
+      <th class="text-center">Name</th>
+      <th class="text-center">Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% values.each do |item| %>
+      <tr>
+        <td class="text-center"><%= item["name"] %></td>
+        <td class="text-center"><%= item["email"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
