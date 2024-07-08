@@ -1,0 +1,49 @@
+<br/>
+
+<%= form_with url: { action: "filter" }, method: :get do |form| %>
+  <div class="field">
+    <%= form.label :campaign_names, "Enter Filter Data" %>
+    <%= form.text_field :campaign_names %>
+  </div>
+  <%= form.submit "Filter User data" %>
+<% end %>
+
+
+<br/>
+
+<h1 class="text-success text-center">User Index</h1>&nbsp;
+
+&nbsp;&nbsp;<%= button_to 'Add New User', new_user_path, method: :get, class: 'btn btn-large btn-block btn-outline-primary' %>
+
+<br/>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<%= will_paginate @users, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+
+<table class = "table table-light table-hover table-bordered table-striped">
+  <thead>
+    <tr>
+      <th class="text-center">Name</th>
+      <th class="text-center">Email</th>
+      <th class="text-center">Campaign List</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="text-center"><%= user.name %></td>
+        <td class="text-center"><%= user.email %></td>
+        <td class="text-center"><%= user.campaigns_list%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= will_paginate @users, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

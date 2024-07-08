@@ -1,10 +1,11 @@
 class Api::V1::UsersController < ApplicationController
 
+    include Filterable
+
     skip_before_action :verify_authenticity_token
 
     def index
         @users = User.all
-        puts @users.class
         render json: @users.as_json(only: [:id, :name, :email]), status: :ok
     end
 
@@ -18,14 +19,8 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def filter
-        filter_string = params[:campaign_names] if params[:campaign_names].present?
-        filters = filter_string.split(",")
-        filter_results = {}
-        filters.each do |filter|
-            users =  User.filter_by_campaign_name(filter)
-            filter_results[filter] = users.as_json(only: [:id, :name, :email])
-        end
-        render json: filter_results, status: :ok
+        filtered_users = filter_users
+        render json: filtered_users, status: :ok
     end
 
     private 
