@@ -1,5 +1,14 @@
 <br/>
 
+<%= form_with url: { action: "filter" }, method: :get do |form| %>
+  <div class="field">
+    <%= form.label :campaign_names, "Enter Filter Data" %>
+    <%= form.text_field :campaign_names %>
+  </div>
+  <%= form.submit "Filter User data" %>
+<% end %>
+
+
 <br/>
 
 <h1 class="text-success text-center">User Index</h1>&nbsp;

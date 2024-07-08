@@ -8,7 +8,7 @@ module Filterable
         filter_results = {}
         filters.each do |filter|
             users =  User.filter_by_campaign_name(filter)
-            filter_results[filter] = users.as_json(only: [:id, :name, :email])
+            filter_results[filter] = users.as_json(only: [:id, :name, :email, :campaign_lists])
         end
         filter_results
   end

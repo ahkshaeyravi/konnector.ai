@@ -7,11 +7,11 @@ class UsersController < ApplicationController
     end
 
     def filter
-    
+        @filtered_users = filter_users
     end
 
     def new
-     @user = User.new
+        @user = User.new
     end
 
     def create
