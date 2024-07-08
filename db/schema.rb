@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2024_07_08_104244) do
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.json "capaigns_list"
+    t.json "campaigns_list"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
