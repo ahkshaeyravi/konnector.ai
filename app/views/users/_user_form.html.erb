@@ -1,6 +1,6 @@
 
 <br/>
-
+<%= @user.errors.full_messages.first if @user.errors.any? %>
 <br/>
 
 <%= form_for user, url: {:controller => 'users', :action => 'create'} do |form| %>

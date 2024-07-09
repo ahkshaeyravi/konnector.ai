@@ -15,19 +15,14 @@ class UsersController < ApplicationController
     end
 
     def create
-
        @user = User.new(user_params)
        @user.campaigns_list = JSON.parse(params[:user][:campaigns_list]) if params[:user][:campaigns_list].present?
 
-       respond_to do |format|
-            if @user.save!
-                format.html { redirect_to root_path, notice: "Yay!, User Was Successfully Created" }
-            else
-                msg = @user.errors.full_messages.join(',')
-                redner 'new'
-            end
+       if @user.save
+            redirect_to root_path
+        else
+            render :new
         end
-    
     end
 
     private
