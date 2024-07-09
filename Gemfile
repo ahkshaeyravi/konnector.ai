@@ -62,3 +62,5 @@ gem "sassc-rails", "~> 2.1"
 gem "will_paginate", "~> 4.0"
 
 gem 'will_paginate-bootstrap-style'
+
+gem 'figaro'
