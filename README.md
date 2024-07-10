@@ -19,3 +19,5 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.) -  Start the application by running `bundle exec rails s` command
 
 * Haved added the postman collection json file through which you can import the entire postman collection into your postman app. File name is `konnector_ai_postman_collection.json`
+
+* Regrading Deployment to cloud, I have followed an similar procedure to what is outlined on this link (https://medium.com/@manishyadavv/how-to-deploy-ruby-on-rails-apps-on-aws-ec2-7ce55bb955fa) with small tweaks here and there as and when needed)
