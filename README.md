@@ -18,6 +18,4 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.) -  Start the application by running `bundle exec rails s` command
 
-* Deployment Instructions
-
-* ...
+* Haved added the postman collection json file through which you can import the entire postman collection into your postamn app. File name is `konnector_ai_postman_collection.json`
